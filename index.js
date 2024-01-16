@@ -21,7 +21,7 @@ async function invokeAction({ action, id, name, email, phone }) {
   switch (action) {
     case "list":
       const contactsList = await listContacts();
-      console.log(contactsList);
+      console.table(contactsList);
 
       break;
 
@@ -45,15 +45,5 @@ async function invokeAction({ action, id, name, email, phone }) {
       console.warn("\x1B[31m Unknown action type!");
   }
 }
-
-// invokeAction({ action: "list" });
-// invokeAction({ action: "get", id: "PlqGej_y5yTcV4L_eY2B1" });
-// invokeAction({
-//   action: "add",
-//   name: "Viktoriia",
-//   email: "vk@gmail.com",
-//   phone: "333-44-55",
-// });
-// invokeAction({ action: "remove", id: "PlqGej_y5yTcV4L_eY2B1" });
 
 invokeAction(options);
